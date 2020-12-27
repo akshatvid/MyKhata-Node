@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyKhata | About Us</title>
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,300&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="ionicons.min.css">
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			var getMax = function() {
+				return $(document).height() - $(window).height();
+			}
+
+			var getValue = function() {
+				return $(window).scrollTop();
+			}
+
+			if ('max' in document.createElement('progress')) {
+				var progressBar = $('progress');
+		
+				progressBar.attr({
+					max: getMax()
+				});
+
+				$(document).on('scroll', function() {
+					progressBar.attr({
+						value: getValue()
+					});
+				});
+
+				$(window).resize(function() {
+					
+					progressBar.attr({
+						max: getMax(),
+						value: getValue()
+					});
+				});
+
+			} else {
+
+				var progressBar = $('.progress-bar'),
+					max = getMax(),
+					value, width;
+
+				var getWidth = function() {
+					
+					value = getValue();
+					width = (value / max) * 100;
+					width = width + '%';
+					return width;
+				}
+
+				var setWidth = function() {
+					progressBar.css({
+						width: getWidth()
+					});
+				}
+
+				$(document).on('scroll', setWidth);
+				$(window).on('resize', function() {
+					
+					max = getMax();
+					setWidth();
+				});
+			}
+		});
+	</script>
+	<style type="text/css">
+		.abt-feature{
+			padding-top: 5%;
+			height: 30vw;
+		}
+		.abt-left{
+			float: left;
+			width: 50%;
+			
+		}
+		.abt-right{
+			float: right;
+			width: 50%;
+			padding-right: 5%;
+			padding-bottom: 5%
+			
+		}
+		.abt-custom{
+			padding-top: 10%;
+			height: 30vw;
+		}
+		/*.abt-left-custom{
+			float: left;
+			width: 50%;
+			height: 30vw;
+			
+		}
+		.abt-right-custom{
+			float: right;
+			width: 50%;
+			padding-right: 5%;
+			
+		}*/
+		.custom-imag{
+			float: right;
+		}
+		p{
+            color:rgb(136, 136, 136);
+            font-size: 120%; 
+            font-weight: 300;
+        }
+        .blu-text{
+            font-size: 500%;
+            outline: none;
+            color:#535151;
+            text-shadow:-5px -5px 20px  rgb(104, 104, 104),
+            5px 5px 20px rgb(33, 33, 34);
+            cursor:pointer;
+        }
+        .blu-text:hover{
+            color:#0099cc;
+            outline: none;
+            text-shadow:-5px -5px 20px  #585858,
+                        5px 5px 20px #2f2f30;
+        }
+        footer{
+		    background-color: #333;
+		    padding:50px;
+		    color:#9d9d9d;
+		}
+		footer ul {
+		    text-decoration: none;
+		    display:inline
+		}
+
+		.foot-nav{
+		    list-style: none;
+		    float:left;
+		}
+		    
+		.social-links{
+		    list-style: none;
+		    float:right;
+		}
+		    
+		.foot-nav li,
+		.social-links li{
+		    display: inline-block;
+		    margin-right:20px;
+		}
+
+		.foot-nav li:last-child,
+		.social-links li:last-child{
+		    margin-right:0;
+		}
+
+		.foot-nav li a:link,
+		.foot-nav li a:visited,
+		.social-links li a:link,
+		.social-links li a:visited{
+		    text-decoration: none;
+		    color:#9d9d9d;
+		    -webkit-transition:color 0.5s;
+		    transition:color 0.5s;
+		}
+
+		footer p{
+		    text-align: center;
+		    margin: 30px 0;
+		    font-size:90%;
+		    
+		}
+		.foot-nav li a:hover,
+		.foot-nav li a :active{
+		    color:#fff;
+		}
+
+		.social-links li a:link,
+		.social-links li a:visited{
+		    font-size:140%;
+		}
+
+		.social-links li .fb :hover{
+		    color:#3b5998;
+		}
+
+		.social-links li .tw :hover{
+		    color:#55acee;
+		}
+
+		.social-links li .gp:hover{
+		    color:#dd4b39;
+		}
+
+		.social-links li .ig :hover{
+		    color:#fb39a9;
+		}
+		.fa{
+		  padding: 20px;
+		  font-size: 50px;
+		  width: 20px;
+		  text-align: right;
+		  text-decoration: none;
+		  margin: 5px 2px;
+		}
+		.fa:hover{
+		    opacity: 0.7;
+		}
+
+		.fa-facebook{
+		  background: rgba(59, 89, 152,0.5);
+		  color: white;
+		  border-radius: 50px;
+		}
+
+		.fa-instagram{
+		  background: rgba(18, 86, 136,0.5);
+		  color: white;
+		  border-radius: 50px;
+		}
+
+		.fa-linkedin{
+		  background: rgba(0, 123, 181,0.5);
+		  color: white;
+		  border-radius: 50px;
+		}
+
+		.fa-github{
+		  background: rgba(0,0,0,0.5);
+		  color: white;
+		  border-radius: 50px;
+		}
+
+		.social{
+		  float: right;
+		  margin-right: 15%;
+		  margin-top: -11%;
+
+		}
+	</style>
+</head>
+<body>
+
+	<!-- <img src="feature2.png"> -->
+	<!-- <img src="about2.svg">
+	<img src="abt.jpeg"> -->
+	<header>
+		<div id="nav">
+			<div id="left">
+				<a href="/" class="underline"><h4 style="font-size: 2vw; color: #0099CC;" class="nav-text">MyKhata</h4></a>
+				<a href="/" class="underline"><h4 class="nav-text">HOME</h4></a>
+				<a href="/index" class="underline"><h4 class="nav-text">MANAGE</h4></a>
+			</div>		
+			<div id="right">
+				<a href="/login" class="underline"><h4 class="nav-text">LOGIN</h4></a>
+				<a href="/signup" class="underline"><h4 class="nav-text">SIGN UP</h4></a>
+			</div>
+		</div>
+	</header>
+	<progress value="0" max="1">
+        <!-- Older browsers look to the old div style of progress bars -->
+        <!-- Newer browsers ignore this stuff but it allows older browsers to 
+                still have a progress bar. -->
+        <div class="progress-container">
+            <span class="progress-bar"></span>    
+        </div>
+    </progress>
+	<div id="top">
+		<h1 class="heading1">MY</h1>
+		<h1 class="heading2">KHATA</h1>
+		<img id="imag" style="float: right; padding-top: 20px; height: auto; width: 60%;" src="assets/phone.svg" >
+		<!-- <img src="laptop2.svg"> -->
+	</div>
+
+
+
+	<div class="abt-feature">
+		<div class="abt-left">
+			<br>
+			
+			<img src="assets/feature2.png" width="100%" height="auto">
+		</div>
+		<div class="abt-right">
+			<br>
+			<br>
+			<h2 style="color: #0099CC; font-size: 3vw; text-align: center;">See Your Financial Life All In One Place</h2>
+			<!-- <img src="custom2.png"> -->
+			<h2 style="color: rgb(182, 181, 181); font-size: 2vw; text-align: center; font-weight: 400;">Plan for today and tomorrow with one solution to manage all your finances.</h2>
+		</div>
+	</div>
+	
+	<div class="abt-custom">
+		<!-- <div class="abt-left-custom"> -->
+			
+			
+		<!-- </div> -->
+		<!-- <div class="abt-right-custom"> -->
+			<img class="custom-imag" src="assets/custom2.png" width="50%" height="auto" >
+		<!-- </div> -->
+		<br>
+			<br>
+			
+			<h2 style="color: #0099CC; font-size: 3vw; text-align: center;">Customize Your Cards</h2>
+			<h2 style="color: rgb(182, 181, 181); font-size: 2vw; text-align: center; font-weight: 400;">Introduce each expense the way you want by our customizable expense cards.</h2>
+	</div>
+	<div class="pie" style="padding-top:0%;  " >
+		<div class="pie-left" style=" float: left; width: 50%;height: 500px;width:900px">
+			<div id="donutchart" style="width: 100%; height: 100%;margin-top: 50px;float:left;">
+            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+            <script type="text/javascript">
+            google.charts.load("current", {packages:["corechart"]});
+            google.charts.setOnLoadCallback(drawChart);
+            function drawChart() {
+                var data = google.visualization.arrayToDataTable([
+                ['Field', 'Expenditure'],
+                ['Food',     11],
+                ['Entertainment',      2],
+                ['Travel',  2],
+                ['Education', 2],
+                ['Daily',    7]
+                ]);
+    
+                var options = {
+                fontName: 'Lato',
+                legend: {textStyle: {color: 'rgb(182, 181, 181)' },'position':'center','alignment':'center'},
+                pieHole: 0.4,
+                backgroundColor: '#3E3C3C',
+                colors: ['#0099CC', '#219ec7', '#4da8c7', '#3aa2c5', '#7aacbd'],
+				width:'900px',
+				height:'500px'
+                };
+    
+                var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+                chart.draw(data, options);
+            }
+            </script>
+        </div>
+		</div>
+		<div class="pie-right" style=" width: 50%;display: inline;">
+			<br><br><br><br><br><br><br><br><br>
+			<h2 style="color: #0099CC; font-size: 3vw; text-align: center;margin-left:-500px; padding-top: 7%;">Track Your Investments</h2>
+			<h2 style="color: rgb(182, 181, 181); font-size: 1.5vw; text-align: center; font-weight: 400; padding-left: 15%">Stay on top of your spending by tracking what’s left after the bills are paid. Make more informed money decisions by creating custom budgets you’ll stick to.</h2>
+		</div>
+	</div>
+	<div class="analyze" style="padding-top: 15%;">
+		<div class="anal-left" style=" float: right; width: 50%; /*border: 1px solid #0099CC; border-radius: 10px;*/">
+			<div class="text-disp" style="margin-top: 5%;">
+	            <p style="color:#0099CC;font-size: 170%;font-weight: bolder;padding-left:40%;">Total Expenditure</p>
+	            <p style="color:rgb(228, 227, 227);font-size:300%;padding-left:40%;">1500 INR</p>
+	            <p style="color:rgb(182,181,181);font-weight: 300;padding-left:40%;">Last week:1200 INR</p>
+	            <p style="padding-left:40%;margin-left:4px;margin-top:80px;"><span class="blu-text">20%</span><br>&nbsp;from last week</p>
+	        </div>
+		</div>
+		<div class="anal-right" style="float: left;width: 50%; padding-left: 5%;">
+			<h2 style="color: #0099CC; font-size: 3vw; text-align: center;">Get Indepth Personalized Data</h2>
+			<h2 style="color: rgb(182, 181, 181); font-size: 2vw; text-align: center; font-weight: 400; ">Review your expenditures in a properly</h2>
+			<h2 style="color: #0099CC; font-size: 2.5vw; text-align: center;">ANALYSED</h2>
+			<h2 style="color: #0099CC; font-size: 2.5vw; text-align: center;">SUMMARISED</h2>
+			<h2 style="color: #0099CC; font-size: 2.5vw; text-align: center;">ORGANISED</h2>
+			<h2 style="color: rgb(182, 181, 181); font-size: 2vw; text-align: center; font-weight: 400; ">display.</h2>
+
+		</div>
+	</div>
+	
+
+	<footer style="padding-top: 20%;">
+                <p style="padding-top: 20%;">Copyright &copy; 2020 by MyKhata. All rights reserved.</p>
+            
+        </footer>
+
+
+
+</body>
+</html>

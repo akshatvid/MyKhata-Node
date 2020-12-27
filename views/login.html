@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyKhata | Login</title>
+	<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,300&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style type="text/css">
+		body{
+			background: #3E3C3C;
+			color: white;
+			font-family: lato;
+		}
+		header {
+		 	width: 100%;
+		 	height: 10%;
+		 	z-index: 2;
+		 	position: fixed;
+		 	top: 0;
+		 	left: 0;
+		 	opacity: 1;
+		 	padding-bottom: 2px;
+		}
+		#nav{
+			/*background: rgba(90,90,90,0.5);*/
+			margin: 0 0;
+			padding: 20px;
+			background: #3E3C3C;
+			height: 2vw;
+		}
+		.nav-text{
+			display: inline;
+			padding-left: 25px;
+			padding-right: 25px;
+
+		}
+		a{
+			color: white;
+			text-decoration: none;
+			padding-bottom: 15px;
+		}
+		#left{
+			float: left;
+		}
+		#right{
+			float: right;
+		}
+		.underline {
+		  	display: inline;
+		  	position: relative;
+		  	overflow: hidden;
+		}
+		/*.underline:after {
+		  	content: "";
+			position: absolute;
+			z-index: -1;
+			left: 20%;
+			right: 100%;
+			bottom: -5px;
+			background: rgba(0, 153, 204);
+			height: 5px;
+			transition-property: left right;
+			transition-duration: 0.5s;
+			transition-timing-function: ease-out;
+		}
+		.underline:hover:after,
+		.underline:focus:after,
+		.underline:active:after {
+				right: 20%;
+		}*/
+		#imag{
+			margin-top: -45%;
+		}
+		a.underline
+		{
+		    position: relative;
+		}
+
+		a.underline:before {
+			margin-top: 0;
+		  	content: "";
+		  	position: absolute;
+		  	width: 0;
+		  	height: 3px;
+		  	bottom: 0;
+		  	left: 20%;
+		  	background-color: #0099CC;
+		  	visibility: hidden;
+		  	transition: all 0.5s ease-in-out;
+		}
+		a.underline:hover:before {
+			margin-top: 0;
+			visibility: visible;
+			width: 62%;
+		}
+		.signup{
+			margin-top: 7vw;
+			margin-left: 29%;
+			vertical-align: top;
+		    display: inline-block;
+		    text-align: center;
+		    padding: 4vw;
+		    padding-top: 2vw;
+		    margin-bottom: 4vw;
+		    width: 34vw;
+		    height: 33vw;
+		    border-radius: 50px;
+		    background: #3E3C3C;
+		    box-shadow: 20px 20px 60px #2d2d2e, -20px -20px 60px #4b4b4b;
+		}
+		/*.flip-card {
+		    background-color: transparent;
+		    width: 300px;
+		    height: 200px;
+		    border: 1px solid transparent;
+		    perspective: 1000px;
+		}*/
+		.sign-heading{
+			letter-spacing: 2px;
+			font-size: 3.5vw;
+		}
+		input{
+			padding-top: 0px;
+		    border: none;
+		    outline:none;
+		    background: none;
+		    padding: 2px;
+		    font-size: 15px;
+		    color:  rgb(182, 181, 181);
+		    text-align: center; 
+		    width:100%;
+		    height: 2vw;
+		}
+		.inp-text{
+			padding-top: 0px;
+		    margin-bottom: 10px;
+		    border-radius: 25px;
+		    box-shadow: inset 2px 2px 2px #2d2d2e,
+		                inset -2px -2px 2px #4e4e4e;
+		}
+		p{
+			padding-bottom: 0px;
+			font-size: 1.6vw;
+			margin-bottom: 6px;
+		}
+		.btn{
+			background: #0099CC;
+			border: 1px solid transparent;
+			border-radius: 100px;
+			height: 3.5vw;
+			width: 9vw;
+			color: #3E3C3C;
+			font-weight: bolder;
+			font-size: 1.6vw;
+		}
+		.no-acc{
+			font-size: 1.3vw;
+		}
+		a.no-acc{
+			color: #0099CC;
+		}
+		.blu-btn{
+		    border: none;
+		    text-decoration: none;
+		    background-color: #3E3C3C;
+		    padding:10px;
+		    padding-bottom: 30px;
+		    width: 30%;
+		    border-radius: 50px;
+		    background: #3e3c3c;
+		    box-shadow:  10px 10px 30px #2d2d2e, 
+		                -10px -10px 30px #4b4b4b;
+		    display: block;
+		    font-size: 1.4vw;
+		    text-shadow: 1px 1px 20px;
+		    color:#0099CC;
+		    display: block;
+		}
+		.blu-btn:hover,
+		.blu-btn:active{
+		    box-shadow: inset 2px 2px 30px #2d2d2e, 
+		                inset -2px -2px 30px #4b4b4b;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<div id="nav">
+			<div id="left">
+				<a href="/" class="underline"><h4 style="font-size: 2vw; color: #0099CC;" class="nav-text">MyKhata</h3></a>
+				<a href="/" class="underline"><h4 class="nav-text">HOME</h3></a>
+				<a href="/index" class="underline"><h4 class="nav-text">MANAGE</h3></a>
+			</div>		
+			<div id="right">
+				<a href="/login" class="underline"><h4 class="nav-text">LOGIN</h3></a>
+				<a href="/signup" class="underline"><h4 class="nav-text">SIGNUP</h3></a>
+			</div>
+		</div>
+	</header>
+	<div class="signup">
+		<h1 class="sign-heading"><span style="color: #0099CC; font-size: 4vw;"><big>M</big>Y<big>K</big>HATA</span></h1>
+		<p>Email:</p>
+		<div class="inp-text"><input type="text" name="email"></div>
+		<p>Password:</p>
+		<div class="inp-text"><input type="password" name="pass"></div>
+		<br>
+		<!-- <button class="btn">Login</button> -->
+		<center><input type="button" class="blu-btn" value="Login"></center>
+		<p class="no-acc">Don't have an Account?   <a class="no-acc" href="signup.html">Sign Up</a></p>
+	</div>
+</body>
+</html>

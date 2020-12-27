@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyKhata | Summary</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,200;0,300;0,400;1,300&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".last-week").hide();
+            $(".last-month").hide(); 
+        });
+    </script>
+</head>
+<body>
+
+    <header>
+        <div id="nav">
+            <div id="left">
+                <a href="/" class="underline"><h4 style="font-size: 2vw; color: #0099CC;" class="nav-text">MyKhata</h4></a>
+                <a href="/" class="underline"><h4 class="nav-text">HOME</h4></a>
+                <a href="/index" class="underline"><h4 class="nav-text">MANAGE</h4></a>
+            </div>      
+            <div id="right">
+                <a href="/" class="underline"><h4 class="nav-text">LOGOUT</h4></a>
+            </div>
+        </div>
+    </header>
+
+
+    
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            
+        }
+        body{
+            background-color: #3E3C3C;
+            font-family: 'Lato';
+        }
+        header {
+            width: 100%;
+            height: 10%;
+            z-index: 2;
+            position: fixed;
+            top: 0;
+            left: 0;
+            opacity: 1;
+            padding-bottom: 2px;
+        }
+        #nav{
+            /*background: rgba(90,90,90,0.5);*/
+            margin: 0 0;
+            padding: 20px;
+            background: #3E3C3C;
+            height: 60px;
+        }
+        .nav-text{
+            display: inline;
+            padding-left: 25px;
+            padding-right: 25px;
+
+        }
+        a{
+            color: white;
+            text-decoration: none;
+            padding-bottom: 15px;
+        }
+        #left{
+            float: left;
+        }
+        #right{
+            float: right;
+        }
+        .underline {
+            display: inline;
+            position: relative;
+            overflow: hidden;
+        }
+        /*.underline:after {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            left: 20%;
+            right: 100%;
+            bottom: -5px;
+            background: rgba(0, 153, 204);
+            height: 5px;
+            transition-property: left right;
+            transition-duration: 0.5s;
+            transition-timing-function: ease-out;
+        }
+        .underline:hover:after,
+        .underline:focus:after,
+        .underline:active:after {
+                right: 20%;
+        }*/
+        #imag{
+            margin-top: -45%;
+        }
+        a.underline
+        {
+            position: relative;
+        }
+
+        a.underline:before {
+            margin-top: 0;
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: 0;
+            left: 20%;
+            background-color: #0099CC;
+            visibility: hidden;
+            transition: all 0.5s ease-in-out;
+        }
+        a.underline:hover:before {
+            margin-top: 0;
+            visibility: visible;
+            width: 62%;
+        }
+    </style>
+    <ul class="nav"><center>
+        <li class="nav-element"><button class="btn this" id="thisweek">This week</button></li>
+        <li class="nav-element"><button class="btn" id="lastweek">Last week</button></li>
+        <li class="nav-element"><button class="btn" id="lastmonth">Last month</button></li></center>
+    </ul>
+    <script>
+         $(document).ready(function() {
+            $("#thisweek").click(function(){
+            $(".this-week").show();
+            $(".last-week").hide();
+            $(".last-month").hide();
+            $("#thisweek").css("color","#0099CC");
+            $("#lastweek").css("color","rgb(182,181,181)");
+            $("#lastmonth").css("color","rgb(182,181,181)");
+        });
+        $("#lastweek").click(function(){
+            $(".last-week").show();
+            $(".this-week").hide();
+            $(".last-month").hide();
+            $("#thisweek").css("color","rgb(182,181,181)");
+            $("#lastweek").css("color","#0099CC");
+            $("#lastmonth").css("color","rgb(182,181,181)");
+        });
+        $("#lastmonth").click(function(){
+            $(".last-month").show();
+            $(".this-week").hide();
+            $(".last-week").hide();
+            $("#thisweek").css("color","rgb(182,181,181)");
+            $("#lastmonth").css("color","#0099CC");
+            $("#lastweek").css("color","rgb(182,181,181)");
+        });
+        });
+        
+    </script>
+    <style>
+        .nav{
+            margin-top: 6vw;
+            list-style: none;
+        }
+        .nav-element{
+            display: inline-block;
+            text-decoration: none;
+            margin-left: 20px;
+            padding:2vw;
+            
+        }
+        .btn{
+            color:rgb(182,181,181);
+            background-color: #3E3C3C;
+            border: 1px solid #3E3C3C;
+            border-radius: 50px;
+            padding:15px 25px;
+            box-shadow:  10px 10px 30px #2d2d2e, 
+                        -10px -10px 30px #4b4b4b;
+            font-size: 120%;
+            font-family: 'Lato';
+            
+        }
+        .btn:hover,
+        .btn:active{
+            box-shadow: inset 2px 2px 30px #2d2d2e, 
+                        inset -2px -2px 30px #4b4b4b;
+            color:#0099CC;
+        }
+
+    </style>
+    <section class="this-week">
+        <div id="donutchart" style="width: 900px; height: 500px;margin-top: 50px;float:left;">
+            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+            <script type="text/javascript">
+            google.charts.load("current", {packages:["corechart"]});
+            google.charts.setOnLoadCallback(drawChart);
+            function drawChart() {
+                var data = google.visualization.arrayToDataTable([
+                ['Field', 'Expenditure'],
+                ['Food',     11],
+                ['Entertainment',      2],
+                ['Travel',  2],
+                ['Education', 2],
+                ['Daily',    7]
+                ]);
+    
+                var options = {
+                fontName: 'Lato',
+                legend: {
+                textStyle: {
+                    color: 'rgb(182, 181, 181)'
+                            }
+                    },
+                pieHole: 0.4,
+                backgroundColor: '#3E3C3C',
+                colors: ['#0099CC', '#219ec7', '#4da8c7', '#3aa2c5', '#7aacbd']
+                };
+    
+                var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+                chart.draw(data, options);
+            }
+            </script>
+        </div>
+        <div class="text-disp" style="margin-top: 5%;">
+            <p style="color:#0099CC;font-size: 170%;font-weight: bolder;padding-left:67%;">Total Expenditure</p>
+            <p style="color:rgb(228, 227, 227);font-size:300%;padding-left:67%;">1500 INR</p>
+            <p style="color:rgb(182,181,181);font-weight: 300;padding-left:67%;">Last week:1200 INR</p>
+            <p style="padding-left:66.8%;margin-left:4px;margin-top:80px;"><span class="blu-text">20%</span><br>&nbsp;from last week</p>
+        </div>
+        <style>
+            p{
+                color:rgb(136, 136, 136);
+                font-size: 120%; 
+                font-weight: 300;
+            }
+            .blu-text{
+                font-size: 500%;
+                outline: none;
+                color:#535151;
+                text-shadow:-5px -5px 20px  rgb(104, 104, 104),
+                5px 5px 20px rgb(33, 33, 34);
+                cursor:pointer;
+            }
+            .blu-text:hover{
+                color:#0099cc;
+                outline: none;
+                text-shadow:-5px -5px 20px  #585858,
+                            5px 5px 20px #2f2f30;
+            }
+        </style>
+    </section>
+    <section class="last-week">
+        <div id="donut" style="margin-top: 50px;float:left;">
+            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+            <script type="text/javascript">
+            google.charts.load("current", {packages:["corechart"]});
+            google.charts.setOnLoadCallback(drawChart);
+            function drawChart() {
+                var data = google.visualization.arrayToDataTable([
+                ['Field', 'Expenditure'],
+                ['Food',     11],
+                ['Entertainment',      2],
+                ['Travel',  2],
+                ['Education', 2],
+                ['Daily',    7]
+                ]);
+    
+                var options = {
+                fontName: 'Lato',
+                legend: {
+                textStyle: {
+                    color: 'rgb(182, 181, 181)'
+                            }
+                    },
+                pieHole: 0.4,
+                backgroundColor: '#3E3C3C',
+                colors: ['#0099CC', '#219ec7', '#4da8c7', '#3aa2c5', '#7aacbd'],
+                width:900,
+                height:500
+                };
+    
+                var chart = new google.visualization.PieChart(document.getElementById('donut'));
+                chart.draw(data, options);
+            }
+            </script>
+        </div>
+        <div class="text-disp" style="margin-top: 5%;">
+            <p style="color:#0099CC;font-size: 170%;font-weight: bolder;padding-left:67%;">Total Expenditure</p>
+            <p style="color:rgb(228, 227, 227);font-size:300%;padding-left:67%;">1500 INR</p>
+            <p style="color:rgb(182,181,181);font-weight: 300;padding-left:67%;">Previous week:1200 INR</p>
+            <p style="padding-left:66.8%;margin-left:4px;margin-top:80px;"><span class="blu-text">20%</span><br>&nbsp;from last week</p>
+        </div>
+        <style>
+            p{
+                color:rgb(136, 136, 136);
+                font-size: 120%; 
+                font-weight: 300;
+            }
+            .blu-text{
+                font-size: 500%;
+                outline: none;
+                color:#535151;
+                text-shadow:-5px -5px 20px  rgb(104, 104, 104),
+                5px 5px 20px rgb(33, 33, 34);
+                cursor:pointer;
+            }
+            .blu-text:hover{
+                color:#0099cc;
+                outline: none;
+                text-shadow:-5px -5px 20px  #585858,
+                            5px 5px 20px #2f2f30;
+            }
+        </style>
+    </section>
+    <section class="last-month">
+        <div id="chart" style="width: 900px; height: 500px;margin-top: 50px;float:left;">
+            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+            <script type="text/javascript">
+            google.charts.load("current", {packages:["corechart"]});
+            google.charts.setOnLoadCallback(drawChart);
+            function drawChart() {
+                var data = google.visualization.arrayToDataTable([
+                ['Field', 'Expenditure'],
+                ['Food',     11],
+                ['Entertainment',      2],
+                ['Travel',  2],
+                ['Education', 2],
+                ['Daily',    7]
+                ]);
+    
+                var options = {
+                fontName: 'Lato',
+                legend: {
+                textStyle: {
+                    color: 'rgb(182, 181, 181)'
+                            }
+                    },
+                pieHole: 0.4,
+                backgroundColor: '#3E3C3C',
+                colors: ['#0099CC', '#219ec7', '#4da8c7', '#3aa2c5', '#7aacbd'],
+                width:900,
+                pieSliceText: 'value',
+                height:500
+                };
+    
+                var chart = new google.visualization.PieChart(document.getElementById('chart'));
+                chart.draw(data, options);
+            }
+            </script>
+        </div>
+        <div class="text-disp" style="margin-top: 5%;">
+            <p style="color:#0099CC;font-size: 170%;font-weight: bolder;padding-left:67%;">Total Expenditure</p>
+            <p style="color:rgb(228, 227, 227);font-size:300%;padding-left:67%;">1500 INR</p>
+            <p style="color:rgb(182,181,181);font-weight: 300;padding-left:67%;">Last month:1200 INR</p>
+            <p style="padding-left:66.8%;margin-left:4px;margin-top:80px;"><span class="blu-text">20%</span><br>&nbsp;from last week</p>
+        </div>
+        <style>
+            p{
+                color:rgb(136, 136, 136);
+                font-size: 120%; 
+                font-weight: 300;
+            }
+            .blu-text{
+                font-size: 500%;
+                outline: none;
+                color:#535151;
+                text-shadow:-5px -5px 20px  rgb(104, 104, 104),
+                5px 5px 20px rgb(33, 33, 34);
+                cursor:pointer;
+            }
+            .blu-text:hover{
+                color:#0099cc;
+                outline: none;
+                text-shadow:-5px -5px 20px  #585858,
+                            5px 5px 20px #2f2f30;
+            }
+        </style>
+    </section>
+    
+</body>
+</html>
