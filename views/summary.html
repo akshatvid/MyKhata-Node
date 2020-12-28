@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyKhata | Summary</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,200;0,300;0,400;1,300&display=swap" rel="stylesheet">
@@ -14,21 +15,260 @@
             $(".last-month").hide(); 
         });
     </script>
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var getMax = function() {
+                return $(document).height() - $(window).height();
+            }
+
+            var getValue = function() {
+                return $(window).scrollTop();
+            }
+
+            if ('max' in document.createElement('progress')) {
+                var progressBar = $('progress');
+        
+                progressBar.attr({
+                    max: getMax()
+                });
+
+                $(document).on('scroll', function() {
+                    progressBar.attr({
+                        value: getValue()
+                    });
+                });
+
+                $(window).resize(function() {
+                    
+                    progressBar.attr({
+                        max: getMax(),
+                        value: getValue()
+                    });
+                });
+
+            } else {
+
+                var progressBar = $('.progress-bar'),
+                    max = getMax(),
+                    value, width;
+
+                var getWidth = function() {
+                    
+                    value = getValue();
+                    width = (value / max) * 100;
+                    width = width + '%';
+                    return width;
+                }
+
+                var setWidth = function() {
+                    progressBar.css({
+                        width: getWidth()
+                    });
+                }
+
+                $(document).on('scroll', setWidth);
+                $(window).on('resize', function() {
+                    
+                    max = getMax();
+                    setWidth();
+                });
+            }
+        });
+    </script>
+
+
+
+
+
 </head>
 <body>
 
-    <header>
+    <!-- <header>
         <div id="nav">
             <div id="left">
                 <a href="/" class="underline"><h4 style="font-size: 2vw; color: #0099CC;" class="nav-text">MyKhata</h4></a>
-                <a href="/" class="underline"><h4 style="font-size: 1.5vw;" class="nav-text">HOME</h4></a>
-                <a href="/index" class="underline"><h4 style="font-size: 1.5vw;" class="nav-text">MANAGE</h4></a>
+                <a href="/" class="underline"><h4 class="nav-text">HOME</h4></a>
+                <a href="/index" class="underline"><h4 class="nav-text">MANAGE</h4></a>
             </div>      
             <div id="right">
-                <a href="/" class="underline"><h4 style="font-size: 1.5vw;" class="nav-text">LOGOUT</h4></a>
+                <a href="/" class="underline"><h4 class="nav-text">LOGOUT</h4></a>
             </div>
         </div>
+    </header> -->
+
+
+
+
+
+
+
+
+
+    <header>
+        <div class="nav">
+      <input type="checkbox" id="nav-check">
+      <div class="nav-header">
+        <div class="nav-title">
+          MyKhata
+        </div>
+      </div>
+      <div class="nav-btn">
+        <label for="nav-check">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+      </div>
+      
+      <div class="nav-links">
+        <a class="underline" href="/" >Home</a>
+        <a class="underline" href="/index" >Manage</a>
+        <a class="underline" href="/login" >Login</a>
+        <a class="underline" href="/signup" >Sign Up</a>
+        
+      </div>
+    </div>
     </header>
+
+
+
+
+
+
+
+    <progress value="0" max="1">
+        <!-- Older browsers look to the old div style of progress bars -->
+        <!-- Newer browsers ignore this stuff but it allows older browsers to 
+                still have a progress bar. -->
+        <div class="progress-container">
+            <span class="progress-bar"></span>    
+        </div>
+    </progress>
+
+
+
+    <style type="text/css">
+        /** {
+      box-sizing: border-box;
+    }
+    */
+    .nav {
+      height: 50px;
+      width: 100%;
+      background-color: #3e3c3c;
+      position: relative;
+      font-family: lato;
+    }
+
+    .nav > .nav-header {
+      display: inline;
+    }
+
+    .nav > .nav-header > .nav-title {
+      display: inline-block;
+      font-size: 2.2vw;
+      color: #0099cc;
+      font-weight: bold;
+      padding: 10px 10px 10px 10px;
+      padding-left: 15px;
+      padding-top: 10px;
+    }
+
+    .nav > .nav-btn {
+      display: none;
+    }
+
+    .nav > .nav-links {
+      display: inline;
+      float: right;
+      font-size: 18px;
+    }
+
+    .nav > .nav-links > a {
+      display: inline-block;
+      padding: 13px 10px 13px 10px;
+      text-decoration: none;
+      color: #fff;
+      padding-right: 20px;
+      padding-left: 15px;
+      margin-left: 10px;
+    }
+
+    /*.nav > .nav-links > a:hover {
+      background-color: rgba(0, 0, 0, 0.3);
+    }*/
+
+    .nav > #nav-check {
+      display: none;
+    }
+
+    @media (max-width:600px) {
+      .nav > .nav-btn {
+        display: inline-block;
+        position: absolute;
+        right: 0px;
+        top: 0px;
+      }
+      .nav-title{
+        font-size: 50px;
+      }
+      .nav > .nav-btn > label {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        padding: 13px;
+      }
+      .nav > .nav-btn > label:hover,.nav  #nav-check:checked ~ .nav-btn > label {
+        background-color: rgba(0, 0, 0, 0.3);
+      }
+      .nav > .nav-btn > label > span {
+        display: block;
+        width: 25px;
+        height: 10px;
+        border-top: 2px solid #eee;
+      }
+      .nav > .nav-links {
+        position: absolute;
+        display: block;
+        width: 100%;
+        background-color: #0099cc;
+        height: 0px;
+        transition: all 0.3s ease-in;
+        overflow-y: hidden;
+        top: 50px;
+        left: 0px;
+      }
+      .nav > .nav-links > a {
+        display: block;
+        text-align: center;
+        width: 100%;
+      }
+      .nav > #nav-check:not(:checked) ~ .nav-links {
+        height: 0px;
+      }
+      .nav > #nav-check:checked ~ .nav-links {
+        height: calc(100vh - 50px);
+        overflow-y: auto;
+      }
+    }
+    </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     
@@ -126,7 +366,7 @@
             width: 62%;
         }
     </style>
-    <ul class="nav"><center>
+    <ul class="navbtn"><center>
         <li class="nav-element"><button class="btn this" id="thisweek">This week</button></li>
         <li class="nav-element"><button class="btn" id="lastweek">Last week</button></li>
         <li class="nav-element"><button class="btn" id="lastmonth">Last month</button></li></center>
@@ -161,7 +401,7 @@
         
     </script>
     <style>
-        .nav{
+        .navbtn{
             margin-top: 6vw;
             list-style: none;
         }
