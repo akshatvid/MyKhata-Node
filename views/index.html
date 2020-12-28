@@ -98,7 +98,7 @@
 </head>
 <body>
 
-	<header>
+	<!-- <header>
 		<div id="nav">
 			<div id="left">
 				<a href="/" class="underline"><h4 style="font-size: 2vw; color: #0099CC;" class="nav-text">MyKhata</h4></a>
@@ -109,7 +109,165 @@
 				<a href="/" class="underline"><h4 class="nav-text">LOGOUT</h4></a>
 			</div>
 		</div>
-	</header>
+	</header> -->
+
+
+
+
+
+
+    <header>
+        <div class="nav">
+      <input type="checkbox" id="nav-check">
+      <div class="nav-header">
+        <div class="nav-title">
+          MyKhata
+        </div>
+      </div>
+      <div class="nav-btn">
+        <label for="nav-check">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+      </div>
+      
+      <div class="nav-links">
+        <a class="underline" href="/" >Home</a>
+        <a class="underline" href="/index" >Manage</a>
+        <a class="underline" href="/" >Logout</a>
+        <!-- <a class="underline" href="" target="_blank">Sign Up</a> -->
+        
+      </div>
+    </div>
+    </header>
+
+
+
+
+    <style type="text/css">
+        /** {
+      box-sizing: border-box;
+    }
+    */
+    .nav {
+      height: 50px;
+      width: 100%;
+      background-color: #3e3c3c;
+      position: relative;
+      font-family: lato;
+    }
+
+    .nav > .nav-header {
+      display: inline;
+    }
+
+    .nav > .nav-header > .nav-title {
+      display: inline-block;
+      font-size: 2.2vw;
+      color: #0099cc;
+      font-weight: bold;
+      padding: 10px 10px 10px 10px;
+      padding-left: 15px;
+      padding-top: 10px;
+    }
+
+    .nav > .nav-btn {
+      display: none;
+    }
+
+    .nav > .nav-links {
+      display: inline;
+      float: right;
+      font-size: 18px;
+    }
+
+    .nav > .nav-links > a {
+      display: inline-block;
+      padding: 13px 10px 13px 10px;
+      text-decoration: none;
+      color: #fff;
+      padding-right: 20px;
+      padding-left: 15px;
+      margin-left: 10px;
+    }
+
+    /*.nav > .nav-links > a:hover {
+      background-color: rgba(0, 0, 0, 0.3);
+    }*/
+
+    .nav > #nav-check {
+      display: none;
+    }
+
+    @media (max-width:600px) {
+      .nav > .nav-btn {
+        display: inline-block;
+        position: absolute;
+        right: 0px;
+        top: 0px;
+      }
+      .nav-title{
+        font-size: 50px;
+      }
+      .nav > .nav-btn > label {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        padding: 13px;
+      }
+      .nav > .nav-btn > label:hover,.nav  #nav-check:checked ~ .nav-btn > label {
+        background-color: rgba(0, 0, 0, 0.3);
+      }
+      .nav > .nav-btn > label > span {
+        display: block;
+        width: 25px;
+        height: 10px;
+        border-top: 2px solid #eee;
+      }
+      .nav > .nav-links {
+        position: absolute;
+        display: block;
+        width: 100%;
+        background-color: #0099cc;
+        height: 0px;
+        transition: all 0.3s ease-in;
+        overflow-y: hidden;
+        top: 50px;
+        left: 0px;
+      }
+      .nav > .nav-links > a {
+        display: block;
+        text-align: center;
+        width: 100%;
+      }
+      .nav > #nav-check:not(:checked) ~ .nav-links {
+        height: 0px;
+      }
+      .nav > #nav-check:checked ~ .nav-links {
+        height: calc(100vh - 50px);
+        overflow-y: auto;
+      }
+    }
+    </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	<progress value="0" max="1">
         <!-- Older browsers look to the old div style of progress bars -->
         <!-- Newer browsers ignore this stuff but it allows older browsers to 
